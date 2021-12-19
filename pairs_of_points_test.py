@@ -62,6 +62,16 @@ class ClosestTest(unittest.TestCase):
         ans = closest_pair_of_points(arr)
         self.assertCorrectPair(ans, (0, -1), (0, 0))
 
+    def testFastX(self):
+        arr = [(0, 0), (1, 10), (2, 15), (3, 10)]
+        ans = closest_pair_of_points(arr)
+        self.assertCorrectPair(ans, (1, 10), (3, 10))
+
+    def testFastY(self):
+        arr = [(0, 0), (10, 1), (15, 2), (10, 3)]
+        ans = closest_pair_of_points(arr)
+        self.assertCorrectPair(ans, (10, 1), (10, 3))
+
     def testEqual(self):
         arr = [(i, j) for i in range(-10, 10) for j in range(-10, 10)]
         res = closest_pair_of_points(arr)
